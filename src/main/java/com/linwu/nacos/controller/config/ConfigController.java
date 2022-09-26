@@ -30,6 +30,7 @@ public class ConfigController {
   public ResponseEntity<String> get(@RequestParam String dataId, @RequestParam String group)
       throws NacosException {
     String config = NacosUtil.getConfigService().getConfig(dataId, group, 3000);
+
     return ResponseEntity.ok(config);
   }
 

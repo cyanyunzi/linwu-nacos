@@ -21,10 +21,10 @@ public class AddressController {
 
   @PostConstruct
   public void init() {
-    list.add("192.168.3.2:8848");
-//    list.add("192.168.3.2:8858");
-//    list.add("192.168.3.2:8868");
-  }
+    list.add("192.168.3.25:8848");
+    list.add("192.168.3.25:8858");
+//    list.add("192.168.3.25:8868");
+  }/**/
 
   @ApiOperation("获取集群配置")
   @GetMapping("/serverlist")
@@ -34,6 +34,7 @@ public class AddressController {
       builder.append(server).append('\n');
     }
     log.info("{} 获取集群列表:{}", nodeName, LocalDateTime.now());
+    System.out.println("自动编译测试");
     return ResponseEntity.ok(builder.toString());
   }
 
